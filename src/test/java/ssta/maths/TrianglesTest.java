@@ -2,7 +2,7 @@ package ssta.maths;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class TrianglesTest {
 
@@ -18,5 +18,39 @@ public class TrianglesTest {
   @Test
   public void nonTriangle() {
     assertEquals(Double.NaN, Triangles.areaFromSides(10, 2, 2), 0);
+  }
+
+  @Test
+  public void testIsPythagoreanTriple() throws Exception {
+    assertTrue(Triangles.isPythagoreanTriple(3, 4, 5));
+    assertTrue(Triangles.isPythagoreanTriple(5, 4, 3));
+    assertTrue(Triangles.isPythagoreanTriple(12, 13, 5));
+
+    assertFalse(Triangles.isPythagoreanTriple(3, 4, 6));
+    assertFalse(Triangles.isPythagoreanTriple(10, 10, 10));
+  }
+
+  @Test
+  public void testIsPythagoreanTriple1() throws Exception {
+    int[] sides = new int[]{3, 4, 5};
+    assertTrue(Triangles.isPythagoreanTriple(sides));
+
+    sides = new int[]{5, 4, 3};
+    assertTrue(Triangles.isPythagoreanTriple(sides));
+
+    sides = new int[]{12, 13, 5};
+    assertTrue(Triangles.isPythagoreanTriple(sides));
+
+    sides = new int[]{3, 4, 6};
+    assertFalse(Triangles.isPythagoreanTriple(sides));
+
+    sides = new int[]{10, 10, 10};
+    assertFalse(Triangles.isPythagoreanTriple(sides));
+  }
+
+  @Test(expected = AssertionError.class)
+  public void testIsPythagoreanTriple2() throws Exception {
+    // bad input
+    Triangles.isPythagoreanTriple(new int[]{1, 2});
   }
 }

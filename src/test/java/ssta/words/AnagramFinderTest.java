@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by ssta on 12/10/16.
- */
 public class AnagramFinderTest {
 
   @Test
