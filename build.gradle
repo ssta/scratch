@@ -1,0 +1,18 @@
+group 'ssta'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+  maven {
+    url "http://localhost:8081/nexus/content/groups/public"
+  }
+}
+
+dependencies {
+  compile 'com.google.guava:guava:20.0'
+  compile 'commons-io:commons-io:2.5'
+  testCompile 'junit:junit:4.12'
+}
