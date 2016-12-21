@@ -27,7 +27,6 @@ public class Triangles {
    * A pythagorean triple is a right angled triangle with integral sides.
    */
   public static boolean isPythagoreanTriple(int[] sides) {
-    assert sides.length == 3;
     // sort the sides.
     Arrays.sort(sides);
     return (sides[0] * sides[0]) + (sides[1] * sides[1]) == (sides[2] * sides[2]);

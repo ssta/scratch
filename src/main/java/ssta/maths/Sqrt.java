@@ -9,7 +9,6 @@ public class Sqrt {
    * enough".
    */
   public static double babylonianSqrt(double s, double delta) {
-    assert s >= 0;
     double x = s / 2;
     double e;
     do {

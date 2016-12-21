@@ -1,18 +1,38 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath 'net.saliman:gradle-cobertura-plugin:2.3.2'
+  }
+}
 group 'ssta'
 version '1.0-SNAPSHOT'
 
+
 apply plugin: 'java'
+apply plugin: 'jacoco'
 
 sourceCompatibility = 1.8
 
 repositories {
   maven {
-    url "http://localhost:8081/nexus/content/groups/public"
+    url "http://artifact-repo.hpd.int:8081/nexus/content/groups/public"
   }
+
 }
 
 dependencies {
   compile 'com.google.guava:guava:20.0'
   compile 'commons-io:commons-io:2.5'
+  compile 'org.slf4j:slf4j-api:+'
   testCompile 'junit:junit:4.12'
+}
+
+jacocoTestReport {
+  reports {
+    xml.enabled false
+    csv.enabled false
+    html.destination "${buildDir}/jacocoHtml"
+  }
 }
