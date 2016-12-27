@@ -6,12 +6,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class AnagramFinder {
-  public static void main(String[] args) {
-    // count the anagrams in /usr/share/dict/words
-    System.out.println(countWordsAnagrams());
-    // count the anagrams in sowpods.txt (much larger and more precise Scrabble players dictionary)
-    System.out.println(countSowpodsAnagrams());
-  }
 
   static int countAnagrams(List<String> words) {
     List<Set<String>> anagrams = findAnagrams(words);
@@ -38,9 +32,9 @@ public class AnagramFinder {
       map.get(sortedWord).add(word);
     });
     return map.entrySet().stream()
-        .filter(e -> e.getValue().size() > 1)
-        .map(Map.Entry::getValue)
-        .collect(Collectors.toList());
+              .filter(e -> e.getValue().size() > 1)
+              .map(Map.Entry::getValue)
+              .collect(Collectors.toList());
   }
 
   static String sortCharsInWord(String s) {

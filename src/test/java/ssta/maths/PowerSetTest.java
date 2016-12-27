@@ -30,4 +30,14 @@ public class PowerSetTest {
     System.out.println((end - start));
 
   }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void tooManyElementsTest() {
+    int[] ints = IntStream.range(0, 70).toArray();
+    Integer[] ints2 = new Integer[ints.length];
+    for (int i = 0; i < ints.length; i++) {
+      ints2[i] = ints[i];
+    }
+    PowerSet<Integer> ps = new PowerSet<>(ImmutableSet.copyOf(ints2));
+  }
 }
