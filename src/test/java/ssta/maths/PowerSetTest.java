@@ -9,6 +9,8 @@ import java.util.stream.IntStream;
 public class PowerSetTest {
   @Test
   public void thingy() {
+
+
     // not really a unit test, but a convenient way to run the damn thing...
     long start = new Date().getTime();
     int[] ints = IntStream.range(0, 20).toArray();
