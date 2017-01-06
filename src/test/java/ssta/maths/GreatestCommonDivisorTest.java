@@ -12,6 +12,7 @@ public class GreatestCommonDivisorTest extends TestCase {
 
   public void testFind() throws Exception {
     assertEquals(BigInteger.valueOf(1), GreatestCommonDivisor.find(BigInteger.valueOf(17), BigInteger.valueOf(5)));
+    assertEquals(BigInteger.valueOf(5), GreatestCommonDivisor.find(BigInteger.valueOf(50), BigInteger.valueOf(15)));
     assertEquals(BigInteger.valueOf(123456789), GreatestCommonDivisor.find(BigInteger.valueOf(123456789), BigInteger.valueOf(123456789)));
   }
 }
